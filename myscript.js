@@ -134,4 +134,5 @@ function getID(){
     console.log("j=" + jd)
     let content = event.target.textContent;
     console.log(content);
+    console.log(content);
 }
