@@ -28,6 +28,12 @@ function addArrayInTheContainer(inputArray){
             count++;
             let Id = "ID" + '-' + i + '-' + j;
             cell.classList.add("cell",Id);
+            if(i=== 2 || i===5){
+                cell.classList.add("separating-row-line");
+            }
+            if(j=== 2 || j===5){
+                cell.classList.add("separating-col-line");
+            }
             div.appendChild(cell);
         }
     }
@@ -44,7 +50,7 @@ tdElement.onclick = getID;
 
 function getID() {
     let className = event.target.className;
-    let arrayClassName = Array.from(className)
+    Array.from(className);
     let arrayId = className.split("-");
     arrayId.splice(0, 1);
     let id = parseInt(arrayId[0]);

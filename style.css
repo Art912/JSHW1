@@ -67,6 +67,14 @@ td {
     grid-row-gap: 30px;
     justify-items: stretch;
     align-items: stretch;
-    border: solid 2px;
-    border-left: solid 1px;
+    border: solid 3px;
+    border-left: solid 2px;
+}
+
+.separating-col-line{
+    border-right: solid 2px;
+}
+
+.separating-row-line{
+    border-bottom: solid 3px;
 }
