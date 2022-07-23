@@ -67,11 +67,12 @@
 // document.getElementById('test').appendChild(table);
 const rows = 20;
 const cols = 20;
-function createArray(){
+
+function createArray() {
     let iter = 1;
     let mainArray = [];
     for (let i = 0; i < rows; i++) {
-        var childArray = [];
+        let childArray = [];
         for (let j = 0; j < cols; j++) {
             childArray[j] = [iter++];
         }
@@ -82,7 +83,7 @@ function createArray(){
     return mainArray;
 }
 
-function addArrayInTheTable(inputArray){
+function addArrayInTheTable(inputArray) {
     let count = 1;
     const table = document.createElement('table');
     for (let i = 0; i < rows; i++) {
@@ -99,6 +100,7 @@ function addArrayInTheTable(inputArray){
     }
     document.getElementById('mainTable').appendChild(table);
 }
+
 // createArray();
 addArrayInTheTable(createArray());
 
@@ -107,32 +109,32 @@ addArrayInTheTable(createArray());
 
 const tdElement = document.getElementById('mainTable');
 tdElement.onclick = getID;
-function getID(){
+
+function getID() {
     let className = event.target.className;
     let arrayClassName = Array.from(className)
-    var id='';
-    var jd='';
-    for (let index=0;index<arrayClassName.length;index++){
-            if (!isNaN(arrayClassName[index])){
-                tempI = arrayClassName[index];
-                id=id+tempI;
-                // console.log("i=" + id)
+    let id = '';
+    let jd = '';
+    let tempI;
+    for (let index = 0; index < arrayClassName.length; index++) {
+        if (!isNaN(arrayClassName[index])) {
+            tempI = arrayClassName[index];
+            id = id + tempI;
+            // console.log("i=" + id)
+        } else if (arrayClassName[index] === '-') {
+            for (; index < arrayClassName.length - 1; index++) {
+                let tempJ = arrayClassName[index + 1];
+                jd = jd + tempJ;
+                // console.log("j=" + jd);
             }
-            else if (arrayClassName[index] === '-') {
-                for (;index<arrayClassName.length-1;index++) {
-                    let tempJ = arrayClassName[index + 1];
-                    jd = jd + tempJ;
-                    // console.log("j=" + jd);
-                }
-            }
+        }
     }
-    var num = className.replace(/\D+/, '')
+    const num = className.replace(/\D+/, '');
     console.log(num);
-    id=parseInt(id);
-    jd=parseInt(jd);
+    id = parseInt(id);
+    jd = parseInt(jd);
     console.log("i=" + id)
     console.log("j=" + jd)
     let content = event.target.textContent;
-    console.log(content);
     console.log(content);
 }
