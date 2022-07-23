@@ -1,69 +1,4 @@
-// var login = "admin"
-// var password = "password"
-// if (typeof window !== 'undefined') {
-//     console.log('You are on the browser')
-// } else {
-//     console.log('You are on the server')
-// }
-// var inputLogin=document.getElementById("login")
-// console.log(inputLogin);
-// var inpetPassvord=document.getElementById("password");
-// console.log(inpetPassvord);
-// if (login != inputLogin){
-//     console.log("Error!!!")
-// }
-// const inpLogin=document.querySelector("#login")
-// addEventListener("click",check)
-// function check(){
-//     let inpLogin=document.querySelector("#login")
-//     if(inpLogin.textContent==login) console.log("Right")
-//     else console.log("Error")
-// }
 
-
-// var table = document.createElement('table')
-// var tableTr = document.createElement('tr')
-// var tableTd = document.createElement('td')
-// // table.appendChild(tableTr)
-// // tableTr.appendChild(tableTd)
-//
-// var n = 5, m = 5;
-// var mas = [];
-// for (var i = 1; i < m; i++) {
-//     mas[i] = [];
-//     table.appendChild(tableTr)
-//     for (var j = 1; j < n; j++) {
-//         tableTr.appendChild(tableTd)
-//         let ind = String(i) + String(j)
-//         tableTd.innerHTML=ind
-//         mas[i][j] = ind;
-//     }
-// }
-// document.getElementById('test').appendChild(table);
-//
-// console.log(mas);
-
-//______________________________________________________________________________________
-
-// let table = document.createElement('table');
-// let count = 1;
-//
-// // let rows = prompt('Сколько строк создать в таблице?', 0);
-// // let cols = prompt('Сколько столбцов создать в таблице?', 0);
-// let rows = 9
-// let cols = 9
-//
-// for (let i = 0; i < rows; i++) {
-//     let tr = document.createElement('tr');
-//     table.append(tr);
-//
-//     for (let j = 0; j < cols; j++) {
-//         let td = document.createElement('td');
-//         td.innerHTML = count;
-//         count++;
-//         tr.append(td);
-//     }
-// }
 // document.getElementById('test').appendChild(table);
 const rows = 20;
 const cols = 20;
@@ -77,9 +12,7 @@ function createArray() {
             childArray[j] = [iter++];
         }
         mainArray[i] = childArray;
-        // console.log(childArray);
     }
-    // console.log(mainArray);
     return mainArray;
 }
 
@@ -101,7 +34,6 @@ function addArrayInTheTable(inputArray) {
     document.getElementById('mainTable').appendChild(table);
 }
 
-// createArray();
 addArrayInTheTable(createArray());
 
 // tdElement.onclick = (event) => console.log(event.target.className);
@@ -113,16 +45,15 @@ tdElement.onclick = getID;
 function getID() {
     let className = event.target.className;
     let arrayClassName = Array.from(className)
-    let tempI;
-    let arrayOfId = className.split("-");
-    let id = arrayOfId[1];
-    let jd = arrayOfId[2];
+    let arrayId = className.split("-");
+    arrayId.splice(0, 1);
+    let id = parseInt(arrayId[0]);
+    let jd = parseInt(arrayId[1]);
     const num = className.replace(/\D+/, '');
     console.log(num);
-    id = parseInt(id);
-    jd = parseInt(jd);
-    console.log("i=" + id)
-    console.log("j=" + jd)
+    console.log("i=" + id);
+    console.log("j=" + jd);
     let content = event.target.textContent;
     console.log(content);
+    // return arrayId;
 }
