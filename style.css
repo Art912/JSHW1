@@ -1,43 +1,72 @@
-fieldset{
+fieldset {
     height: 120px;
     width: 300px;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
 }
-.lable{
+
+.lable {
     width: 100px;
 }
-.lables{
+
+.lables {
     width: 80px;
 }
-.field{
+
+.field {
     display: flex;
     margin: 5px;
 
 }
-#check,#reset{
+
+#check, #reset {
     height: 20px;
 }
-.error{
+
+.error {
     background: red;
     color: white;
     position: absolute;
     top: 70px;
     left: 175px;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     padding: 7px;
     display: none;
 }
-table{
+
+table {
     border: solid 3px;
     border-spacing: 0;
 
 }
-td{
+
+td {
     border: solid 1px;
     padding: 5px;
 }
-tr{
 
+
+.cell {
+    display: flex;
+    width: 30px;
+    height: 30px;
+    border: solid 1px;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    margin: 0;
+    padding: 0;
+    height: 272px;
+    width: 270px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,0px);
+    grid-template-rows: repeat(auto-fill,0px);
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+    justify-items: stretch;
+    align-items: stretch;
+    border: solid 2px;
+    border-left: solid 1px;
 }

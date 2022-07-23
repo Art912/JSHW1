@@ -1,7 +1,7 @@
 
 // document.getElementById('test').appendChild(table);
-const rows = 20;
-const cols = 20;
+const rows = 9;
+const cols = 9;
 
 function createArray() {
     let iter = 1;
@@ -16,30 +16,30 @@ function createArray() {
     return mainArray;
 }
 
-function addArrayInTheTable(inputArray) {
+function addArrayInTheContainer(inputArray){
     let count = 1;
-    const table = document.createElement('table');
+    let cell;
+    const div = document.createElement('div');
+    div.classList.add("container");
     for (let i = 0; i < rows; i++) {
-        let tr = document.createElement('tr');
-        table.append(tr);
         for (let j = 0; j < cols; j++) {
-            let td = document.createElement('td');
-            td.textContent = inputArray[i][j];
+            cell = document.createElement('div');
+            cell.innerHTML = inputArray[i][j];
             count++;
-            tr.append(td);
-            let tdId = "tdID" + '-' + i + '-' + j;
-            td.classList.add(tdId);
+            let Id = "ID" + '-' + i + '-' + j;
+            cell.classList.add("cell",Id);
+            div.appendChild(cell);
         }
     }
-    document.getElementById('mainTable').appendChild(table);
+    document.getElementById('mainContainer').appendChild(div);
 }
 
-addArrayInTheTable(createArray());
+addArrayInTheContainer(createArray());
 
 // tdElement.onclick = (event) => console.log(event.target.className);
 // console.log(parseInt(event.target.className))
 
-const tdElement = document.getElementById('mainTable');
+const tdElement = document.getElementById('mainContainer');
 tdElement.onclick = getID;
 
 function getID() {
