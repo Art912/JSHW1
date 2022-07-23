@@ -94,7 +94,7 @@ function addArrayInTheTable(inputArray) {
             td.textContent = inputArray[i][j];
             count++;
             tr.append(td);
-            let tdId = "tdID" + i + '-' + j;
+            let tdId = "tdID" + '-' + i + '-' + j;
             td.classList.add(tdId);
         }
     }
@@ -113,22 +113,10 @@ tdElement.onclick = getID;
 function getID() {
     let className = event.target.className;
     let arrayClassName = Array.from(className)
-    let id = '';
-    let jd = '';
     let tempI;
-    for (let index = 0; index < arrayClassName.length; index++) {
-        if (!isNaN(arrayClassName[index])) {
-            tempI = arrayClassName[index];
-            id = id + tempI;
-            // console.log("i=" + id)
-        } else if (arrayClassName[index] === '-') {
-            for (; index < arrayClassName.length - 1; index++) {
-                let tempJ = arrayClassName[index + 1];
-                jd = jd + tempJ;
-                // console.log("j=" + jd);
-            }
-        }
-    }
+    let arrayOfId = className.split("-");
+    let id = arrayOfId[1];
+    let jd = arrayOfId[2];
     const num = className.replace(/\D+/, '');
     console.log(num);
     id = parseInt(id);
