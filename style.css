@@ -71,10 +71,10 @@ td {
     border-left: solid 2px;
 }
 
-.separating-col-line{
+.separatingColLine{
     border-right: solid 2px;
 }
 
-.separating-row-line{
+.separatingRowLine{
     border-bottom: solid 3px;
 }
