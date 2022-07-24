@@ -15,43 +15,36 @@ function createArray() {
     return mainArray;
 }
 
-// function addArrayInTheContainer(inputArray){
-//     let count = 1;
-//     let cell;
-//     const div = document.createElement('div');
-//     div.classList.add("container");
-//     for (let i = 0; i < rows; i++) {
-//         for (let j = 0; j < cols; j++) {
-//             cell = document.createElement('div');
-//             cell.innerHTML = inputArray[i][j];
-//             count++;
-//             let Id = "ID" + '-' + i + '-' + j;
-//             cell.classList.add("cell",Id);
-//             if(i=== 2 || i===5){
-//                 cell.classList.add("separating-row-line");
-//             }
-//             if(j=== 2 || j===5){
-//                 cell.classList.add("separating-col-line");
-//             }
-//             div.appendChild(cell);
-//         }
-//     }
-//     document.getElementById('mainContainer').appendChild(div);
-// }
+function addArrayInTheContainer(inputArray){
+    let count = 1;
+    let cell;
+    // const div = document.querySelector(".container");
+    for (let i = 0; i < rows; i++) {
+        for (let j = 0; j < cols; j++) {
 
-// addArrayInTheContainer(createArray());
+            cell = document.getElementsByClassName("container");
+            // console.log(element.target.className);
+            cell.innerHTML = inputArray[i][j];
+            count++;
+            // div.appendChild(cell);
+        }
+    }
+    // document.getElementById('mainContainer').appendChild(div);
+}
 
-// tdElement.onclick = (event) => console.log(event.target.className);
+addArrayInTheContainer(createArray());
+
+// element.onclick = (event) => console.log(event.target.className);
 // console.log(parseInt(event.target.className))
 
-const tdElement = document.getElementById('mainContainer');
-tdElement.onclick = function (event) {
+const element = document.getElementById('mainContainer');
+element.onclick = function (event) {
     let className = event.target.className;
     getId(className)
 }
 
-// const tdElement = document.getElementById('mainContainer');
-// tdElement.onclick = getId;
+// const element = document.getElementById('mainContainer');
+// element.onclick = getId;
 
 function getId(className) {
     let arrayId = className.split("-");
