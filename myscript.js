@@ -1,6 +1,6 @@
 // document.getElementById('test').appendChild(table);
-const rows = 9;
-const cols = 9;
+const rows = 10;
+const cols = 10;
 
 function createArray() {
     let iter = 1;
@@ -68,28 +68,70 @@ function getId(className) {
 }
 
 
-function createContainer() {
+// function createContainer() {
+//     let count = 1;
+//     let cell;
+//     const div = document.createElement('div');
+//     div.classList.add("container");
+//     for (let i = 0; i < rows; i++) {
+//         for (let j = 0; j < cols; j++) {
+//             cell = document.createElement('div');
+//             cell.innerHTML = '';
+//             count++;
+//             let Id = "id" + '-' + i + '-' + j;
+//             cell.classList.add("cell", Id);
+//             if (i === 2 || i === 5) {
+//                 cell.classList.add("separatingRowLine");
+//             }
+//             if (j === 2 || j === 5) {
+//                 cell.classList.add("separatingColLine");
+//             }
+//             div.appendChild(cell);
+//         }
+//     }
+//     document.getElementById('mainContainer').appendChild(div);
+// }
+
+function generateDivs(array) {
     let count = 1;
-    let cell;
     const div = document.createElement('div');
     div.classList.add("container");
-    for (let i = 0; i < rows; i++) {
-        for (let j = 0; j < cols; j++) {
-            cell = document.createElement('div');
+    for (let i = 1; i < rows; i++) {
+        for (let j = 1; j < cols; j++) {
+            let cell = document.createElement('div');
             cell.innerHTML = '';
-            count++;
+            // cell.id = `${i}-${j}`;
             let Id = "id" + '-' + i + '-' + j;
-            cell.classList.add("cell", Id);
-            if (i === 2 || i === 5) {
+            cell.classList.add("cell", Id)
+            if (i === 3 || i === 6) {
                 cell.classList.add("separatingRowLine");
             }
-            if (j === 2 || j === 5) {
+            if (j === 3 || j === 6) {
                 cell.classList.add("separatingColLine");
             }
+
+            for (let k = 0; k < array.length; k++) {
+                if (array[k].cellI === i && array[k].cellJ === j) {
+                    cell.innerHTML = array[k].value;
+                }
+            }
+
             div.appendChild(cell);
         }
     }
     document.getElementById('mainContainer').appendChild(div);
 }
 
-createContainer();
+function test() {
+    const array = [
+        {cellI: 2, cellJ: 2, value: 9},
+        {cellI: 3, cellJ: 3, value: 5},
+        {cellI: 4, cellJ: 4, value: 7},
+    ];
+
+    generateDivs(array);
+}
+
+test();
+
+// createContainer();
