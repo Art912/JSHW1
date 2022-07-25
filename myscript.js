@@ -17,7 +17,9 @@ function createArray() {
 const tdElement = document.getElementById('mainContainer');
 tdElement.onclick = function (event) {
     let id = event.target.id;
-    getId(id)
+    getId(id);
+    let target=document.getElementById(event.target.id)
+    target.classList.toggle('selectCell');
 }
 
 function getId(id) {
@@ -40,14 +42,19 @@ function createContainer(inputArray) {
     let cell;
     const div = document.createElement('div');
     div.classList.add("container");
+    div.setAttribute('ondblclick',"return false")
+    div.setAttribute('onselectstart',"return false")
+    div.setAttribute('onmousedown',"return false")
+    div.setAttribute('ondragstart',"return false")
+    div.setAttribute('ondrop',"return false")
     for (let i = 1; i < rows; i++) {
         for (let j = 1; j < cols; j++) {
             cell = document.createElement('div');
             cell.innerHTML = inputArray[i][j];
             count++;
             // let Id = "id" + '-' + i + '-' + j;
-            cell.classList.add("cell");
             cell.id = `id-${i}-${j}`;
+            cell.classList.add("cell");
             if (i === 3 || i === 6) {
                 cell.classList.add("separatingRowLine");
             }
