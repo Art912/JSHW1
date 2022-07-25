@@ -45,7 +45,6 @@ function createContainer(inputArray) {
             cell = document.createElement('div');
             cell.innerHTML = inputArray[i][j];
             count++;
-            // let Id = "id" + '-' + i + '-' + j;
             cell.classList.add("cell");
             cell.id = `id-${i}-${j}`;
             if (i === 3 || i === 6) {
