@@ -13,9 +13,9 @@ function createArray() {
     }
     return mainArray;
 }
-
-const tdElement = document.getElementById('mainContainer');
-tdElement.onclick = function (event) {
+createContainer(createArray());
+const element = document.getElementById('container');
+element.onclick = function (event) {
     let id = event.target.id;
     getId(id);
     let target=document.getElementById(event.target.id)
@@ -41,7 +41,7 @@ function createContainer(inputArray) {
     let count = 1;
     let cell;
     const div = document.createElement('div');
-    div.classList.add("container");
+    div.id="container";
     div.setAttribute('ondblclick',"return false")
     div.setAttribute('onselectstart',"return false")
     div.setAttribute('onmousedown',"return false")
@@ -66,6 +66,5 @@ function createContainer(inputArray) {
     }
     document.getElementById('mainContainer').appendChild(div);
 }
-createContainer(createArray());
 
 

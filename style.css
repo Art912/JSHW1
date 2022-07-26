@@ -56,14 +56,15 @@ td {
     align-items: center;
     font-size: 25px;
 }
-.container{
+
+#container {
     margin: 0;
     padding: 0;
     height: 375px;
     width: 375px;
     display: grid;
-    grid-template-columns: repeat(auto-fill,2px);
-    grid-template-rows: repeat(auto-fill,2px);
+    grid-template-columns: repeat(auto-fill, 2px);
+    grid-template-rows: repeat(auto-fill, 2px);
     grid-column-gap: 40px;
     grid-row-gap: 40px;
     justify-items: stretch;
@@ -72,16 +73,48 @@ td {
     border-left: solid 2px;
 }
 
-.separatingColLine{
+.separatingColLine {
     border-right: solid 3px;
     width: 38px;
 }
 
-.separatingRowLine{
+.separatingRowLine {
     border-bottom: solid 3px;
     height: 38px;
 }
-.selectCell{
-    background: lightgrey;
 
+.selectCell {
+    background: lightgrey;
+}
+
+#mainContainer {
+    width: 700px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#input_form div{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-content: space-between;
+    margin: 0;
+    width: 280px;
+    height: 400px;
+
+}
+#new-game{
+    width: 300px;
+    height: 50px;
+    font-size: 20px;
+}
+.control{
+    width: 90px;
+    height: 50px;
+    font-size: 20px;
+}
+.input-number{
+    width: 90px;
+    height: 90px;
+    font-size: 40px;
 }
