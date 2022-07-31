@@ -71,6 +71,7 @@ td {
     align-items: stretch;
     border: solid 3px;
     border-left: solid 2px;
+    cursor: pointer;
 }
 
 .separatingColLine {
@@ -117,4 +118,7 @@ td {
     width: 90px;
     height: 90px;
     font-size: 40px;
+}
+.selectSquare{
+    background: lightskyblue;
 }
