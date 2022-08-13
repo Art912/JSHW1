@@ -8,26 +8,45 @@
 </head>
 <body id="body">
 <div class="task1">
-<!--    <form class="form1">-->
-<!--        <fieldset>-->
-<!--            <div class="box">-->
-<!--                <div class="inp-login field">-->
-<!--                    <label class="lable" for="login">Login</label>-->
-<!--                    <input type="text" id="login">-->
-<!--                </div>-->
-<!--                <div class="inp-password field">-->
-<!--                    <label class="lable" for="password">Password</label>-->
-<!--                    <input type="password" id="password">-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="error">ERROR!</div>-->
-<!--            <input id="check" type="button" value="Check">-->
-<!--            <input id="reset" type="reset" value="Reset">-->
+    <!--    <form class="form1">-->
+    <!--        <fieldset>-->
+    <!--            <div class="box">-->
+    <!--                <div class="inp-login field">-->
+    <!--                    <label class="lable" for="login">Login</label>-->
+    <!--                    <input type="text" id="login">-->
+    <!--                </div>-->
+    <!--                <div class="inp-password field">-->
+    <!--                    <label class="lable" for="password">Password</label>-->
+    <!--                    <input type="password" id="password">-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--            <div class="error">ERROR!</div>-->
+    <!--            <input id="check" type="button" value="Check">-->
+    <!--            <input id="reset" type="reset" value="Reset">-->
 
-<!--        </fieldset>-->
-<!--    </form>-->
+    <!--        </fieldset>-->
+    <!--    </form>-->
 </div>
-<div id="mainContainer"></div>
-<script src="myscript.js"></script>
+<div id="mainContainer">
+    <script src="myscript.js"></script>
+    <div id="input_form">
+        <div>
+            <button id="new-game">New game</button>
+            <button id="back" class="control">Back</button>
+            <button id="clear" class="control" onclick="clearContainer();">Clear</button>
+            <button id="prompt" class="control">Prompt</button>
+            <button id="number-1" class="input-number" onclick="inputNumber(1);">1</button>
+            <button id="number-2" class="input-number" onclick="inputNumber(2);">2</button>
+            <button id="number-3" class="input-number" onclick="inputNumber(3);">3</button>
+            <button id="number-4" class="input-number" onclick="inputNumber(4);">4</button>
+            <button id="number-5" class="input-number" onclick="inputNumber(5);">5</button>
+            <button id="number-6" class="input-number" onclick="inputNumber(6);">6</button>
+            <button id="number-7" class="input-number" onclick="inputNumber(7);">7</button>
+            <button id="number-8" class="input-number" onclick="inputNumber(8);">8</button>
+            <button id="number-9" class="input-number" onclick="inputNumber(9);">9</button>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
