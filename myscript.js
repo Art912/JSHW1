@@ -94,6 +94,7 @@ function getId(id) {
 function createContainer(inputArray) {
     let count = 1;
     let cell;
+    let number;
     const div = document.createElement('div');
     div.id = "container";
     div.setAttribute('ondblclick', "return false")
@@ -104,8 +105,9 @@ function createContainer(inputArray) {
     for (let i = 0; i < rows; i++) {
         for (let j = 0; j < cols; j++) {
             cell = document.createElement('div');
+            number = document.createElement('span');
             if (inputArray[i][j] !== 0) {
-                cell.innerHTML = inputArray[i][j];
+                number.innerHTML = inputArray[i][j];
                 cell.classList.add("default");
             }
             count++;
@@ -118,6 +120,7 @@ function createContainer(inputArray) {
             if (j === 2 || j === 5) {
                 cell.classList.add("separatingColLine");
             }
+            cell.appendChild(number);
             div.appendChild(cell);
         }
     }
@@ -129,9 +132,9 @@ function clearContainer() {
     let allCells = document.querySelectorAll('.cell');
     for (let i = 0; i < allCells.length; i++) {
         if (allCells[i].className.indexOf("default")) {
-            allCells[i].innerHTML = '';
+            allCells[i].firstChild.innerHTML = '';
         }
-        allCells[i].classList.remove('repeating-number')
+        allCells[i].firstChild.classList.remove('repeating-number')
     }
 }
 
@@ -139,7 +142,7 @@ function inputNumber(value) {
     let cell = document.querySelector('.selectCell');
     if (cell.className.indexOf("default")) {
         let coordinates = getId(cell.id);
-        cell.innerHTML = value;
+        cell.firstChild.innerHTML = value;
         enteringArray[coordinates[0]][coordinates[1]] = value;
         // checkSquare(coordinates[0], coordinates[1], value);
         // checkColumn(coordinates[0], coordinates[1], value);
