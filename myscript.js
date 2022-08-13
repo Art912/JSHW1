@@ -141,7 +141,7 @@ function inputNumber(value) {
         let coordinates = getId(cell.id);
         cell.innerHTML = value;
         enteringArray[coordinates[0]][coordinates[1]] = value;
-        checkSquare(coordinates[0], coordinates[1], value);
+        // checkSquare(coordinates[0], coordinates[1], value);
         // checkColumn(coordinates[0], coordinates[1], value);
         // checkRow(coordinates[0], coordinates[1], value);
     }
@@ -201,113 +201,6 @@ function someFunction(a, b) {
     }
 }
 
-let repeatingArrayNumber;
-
-function checkSquare(inputI, inputJ, inputValue) {
-    let startRow, startCol;
-    if (inputI < 3 && inputJ < 3) {
-        console.log('Square 1')
-        startRow = 0;
-        startCol = 0;
-    } else if (inputI < 3 && inputJ > 2 && inputJ < 6) {
-        console.log('Square 2')
-        startRow = 0;
-        startCol = 3;
-    } else if (inputI < 3 && inputJ > 5) {
-        console.log('Square 3')
-        startRow = 0;
-        startCol = 6;
-
-    } else if (inputI > 2 && inputI < 6 && inputJ < 3) {
-        console.log('Square 4')
-        startRow = 3;
-        startCol = 0;
-
-    } else if (inputI > 2 && inputI < 6 && inputJ > 2 && inputJ < 6) {
-        console.log('Square 5')
-        startRow = 3;
-        startCol = 3;
-
-    } else if (inputI > 2 && inputI < 6 && inputJ > 5) {
-        console.log('Square 6')
-        startRow = 3;
-        startCol = 6;
-
-    } else if (inputI > 5 && inputJ < 3) {
-        console.log('Square 7')
-        startRow = 6;
-        startCol = 0;
-
-    } else if (inputI > 5 && inputJ > 2 && inputJ < 6) {
-        console.log('Square 8')
-        startRow = 6;
-        startCol = 3;
-
-    } else if (inputI > 5 && inputJ > 5) {
-        console.log('Square 9')
-        startRow = 6;
-        startCol = 6;
-    }
-    let rows = startRow + 3;
-    let cols = startCol + 3;
-
-
-    let currentDivsArray = [];
-
-    for (let i = startRow; i < rows; i++) {
-        for (let j = startCol; j < cols; j++) {
-            currentDivsArray.push(document.getElementById(`id-${i}-${j}`));
-            //if (i == inputI && j == inputJ){
-                // selected
-                // if(previousNumber.classList.contains('repeating-number')){
-                //     removeRed(previousNumber);
-                // }
-                // if(repeatingArrayNumber && repeatingArrayNumber.classList.contains('repeating-number') && repeatingArrayNumber.innerHTML != inputValue){
-                //     removeRed(repeatingArrayNumber);
-                // }
-                // break;
-            //}
-            // console.log(`[${i}][${j}] - ${enteringArray[i][j]}`);
-            // let number = enteringArray[i][j];
-            //
-            // if (number !== inputValue){
-            //     let other = document.getElementById(`id-${i}-${j}`);
-            //
-            //     if(other && other.classList.contains('repeating-number')){
-            //         removeRed(repeatingArrayNumber);
-            //     }
-            // }
-            //
-            // if (enteringArray[i][j] === inputValue) {
-            //     if (!(i == inputI && j == inputJ)){
-            //         repeatingArrayNumber = document.getElementById(`id-${i}-${j}`);
-            //         let repeatingInputNumber = document.getElementById(`id-${inputI}-${inputJ}`);
-            //
-            //         repeatingArrayNumber.classList.add('repeating-number');
-            //         repeatingInputNumber.classList.add('repeating-number');
-            //     }
-            // }
-        }
-    }
-
-    // let duplicates = [];
-    let duplicates = currentDivsArray.filter(div => div.innerHTML == inputValue);
-
-    let x21 = document.getElementById(`id-${2}-${1}`);
-    let x12 = document.getElementById(`id-${1}-${2}`);
-    let x = x21.innerHTML;
-    let y = x12.innerHTML;
-
-
-    if (duplicates.length > 1){
-        duplicates.forEach(div => {
-            if (div.innerText == inputValue){
-                div.classList.add('repeating-number');
-            }
-        })
-    }
-
-}
 
 function removeRed(element){
     element.classList.remove('repeating-number');
