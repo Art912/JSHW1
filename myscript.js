@@ -257,55 +257,51 @@ function checkSquare(inputI, inputJ, inputValue) {
     for (let i = startRow; i < rows; i++) {
         for (let j = startCol; j < cols; j++) {
             currentDivsArray.push(document.getElementById(`id-${i}-${j}`));
-            //if (i == inputI && j == inputJ){
-                // selected
-                // if(previousNumber.classList.contains('repeating-number')){
-                //     removeRed(previousNumber);
-                // }
-                // if(repeatingArrayNumber && repeatingArrayNumber.classList.contains('repeating-number') && repeatingArrayNumber.innerHTML != inputValue){
-                //     removeRed(repeatingArrayNumber);
-                // }
-                // break;
-            //}
-            // console.log(`[${i}][${j}] - ${enteringArray[i][j]}`);
-            // let number = enteringArray[i][j];
-            //
-            // if (number !== inputValue){
-            //     let other = document.getElementById(`id-${i}-${j}`);
-            //
-            //     if(other && other.classList.contains('repeating-number')){
+            // if (i == inputI && j == inputJ){
+            //     if(previousNumber.classList.contains('repeating-number')){
+            //         removeRed(previousNumber);
+            //     }
+            //     if(repeatingArrayNumber && repeatingArrayNumber.classList.contains('repeating-number') && repeatingArrayNumber.innerHTML != inputValue){
             //         removeRed(repeatingArrayNumber);
             //     }
+            //     break;
             // }
-            //
-            // if (enteringArray[i][j] === inputValue) {
-            //     if (!(i == inputI && j == inputJ)){
-            //         repeatingArrayNumber = document.getElementById(`id-${i}-${j}`);
-            //         let repeatingInputNumber = document.getElementById(`id-${inputI}-${inputJ}`);
-            //
-            //         repeatingArrayNumber.classList.add('repeating-number');
-            //         repeatingInputNumber.classList.add('repeating-number');
-            //     }
-            // }
+            console.log(`[${i}][${j}] - ${enteringArray[i][j]}`);
+            let number = enteringArray[i][j];
+
+            if (number !== inputValue){
+                let other = document.getElementById(`id-${i}-${j}`);
+                let repeatingInputNumber = document.getElementById(`id-${inputI}-${inputJ}`);
+
+
+                if(other && other.classList.contains('repeating-number')){
+                    removeRed(repeatingArrayNumber);
+                    removeRed(repeatingInputNumber);
+                }
+            }
+
+            if (enteringArray[i][j] === inputValue) {
+                if (!(i == inputI && j == inputJ)){
+                    repeatingArrayNumber = document.getElementById(`id-${i}-${j}`);
+                    let repeatingInputNumber = document.getElementById(`id-${inputI}-${inputJ}`);
+
+                    repeatingArrayNumber.classList.add('repeating-number');
+                    repeatingInputNumber.classList.add('repeating-number');
+                }
+            }
         }
     }
 
     // let duplicates = [];
     let duplicates = currentDivsArray.filter(div => div.innerHTML == inputValue);
-
-    let x21 = document.getElementById(`id-${2}-${1}`);
-    let x12 = document.getElementById(`id-${1}-${2}`);
-    let x = x21.innerHTML;
-    let y = x12.innerHTML;
-
-
-    if (duplicates.length > 1){
-        duplicates.forEach(div => {
-            if (div.innerText == inputValue){
-                div.classList.add('repeating-number');
-            }
-        })
-    }
+    //
+    // if (duplicates.length > 1){
+    //     duplicates.forEach(div => {
+    //         // if (div.innerText == inputValue){
+    //             div.classList.add('repeating-number');
+    //         // }
+    //     })
+    // }
 
 }
 
